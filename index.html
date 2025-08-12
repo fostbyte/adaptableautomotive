@@ -316,109 +316,6 @@
             background: #ef4444;
         }
 
-        /* Contact Form */
-        .contact-form-section {
-            background: #1f2937;
-            padding: 80px 0;
-        }
-
-        .contact-form-section .section-title {
-            color: #ffffff;
-        }
-
-        .contact-form-section .section-title::after {
-            background: #ef4444;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #374151;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #f9fafb;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #4b5563;
-            border-radius: 5px;
-            background: #1f2937;
-            color: #ffffff;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #ef4444;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #9ca3af;
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .submit-btn {
-            background: #ef4444;
-            color: #ffffff;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: #dc2626;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
-        }
-
-        .form-intro {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #d1d5db;
-        }
-
-        .form-intro h3 {
-            color: #ef4444;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -534,14 +431,6 @@
             .review-card {
                 padding: 1.5rem;
             }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form {
-                padding: 2rem 1.5rem;
-            }
         }
     </style>
 </head>
@@ -572,7 +461,7 @@
         <div class="hero-content">
             <h1>Adaptable Automotive LLC</h1>
             <p>Professional Auto Repair Services in Wimauma, FL - Honest People, Quality Work, Fair Prices</p>
-            <a href="#contact-form" class="cta-button">Get In Touch Today</a>
+            <a href="#contact" class="cta-button">Get In Touch Today</a>
         </div>
     </section>
 
@@ -730,62 +619,6 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact-form" class="contact-form-section">
-        <div class="container">
-            <h2 class="section-title">Request Service</h2>
-            <div class="form-intro">
-                <h3>Get a Quote for Your Auto Repair</h3>
-                <p>Tell us about your vehicle and the problem you're experiencing. We'll get back to you quickly with an estimate and available appointment times.</p>
-            </div>
-            
-            <form class="contact-form" action="mailto:keygan.foster@gmail.com" method="POST" enctype="text/plain" netlify>
-                <input type="hidden" name="form-name" value="auto-repair-request">
-                <input type="hidden" name="subject" value="New Auto Repair Service Request - Adaptable Automotive">
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="Your full name">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="your@email.com">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="(813) 555-0123">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="car_model">Vehicle Make & Model *</label>
-                        <input type="text" id="car_model" name="car_model" required placeholder="e.g., 2018 Ford F-150">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="problem">Describe the Problem *</label>
-                    <textarea id="problem" name="problem" required placeholder="Please describe what's wrong with your vehicle, any symptoms you've noticed, and when the problem started..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="preferred_contact">Preferred Contact Method</label>
-                    <select id="preferred_contact" name="preferred_contact">
-                        <option value="phone">Phone Call</option>
-                        <option value="email">Email</option>
-                        <option value="text">Text Message</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="submit-btn">Request Service Quote</button>
-            </form>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
@@ -895,9 +728,9 @@
             // Navbar background opacity on scroll
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
-                navbar.style.background = 'linear-gradient(135deg, rgba(31, 41, 55, 0.95) 0%, rgba(17, 24, 39, 0.95) 100%)';
+                navbar.style.background = 'linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(30, 64, 175, 0.95) 100%)';
             } else {
-                navbar.style.background = 'linear-gradient(135deg, #1f2937 0%, #111827 100%)';
+                navbar.style.background = 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)';
             }
         });
 
@@ -941,61 +774,6 @@
         });
         mapContainer.style.opacity = '0.7';
         mapContainer.style.transition = 'opacity 0.5s ease';
-
-        // Contact form handling
-        const contactForm = document.querySelector('.contact-form');
-        const submitBtn = document.querySelector('.submit-btn');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form data
-                const formData = new FormData(this);
-                const data = {};
-                for (let [key, value] of formData.entries()) {
-                    data[key] = value;
-                }
-
-                // Create email body
-                const emailBody = `New Auto Repair Service Request
-
-Customer Information:
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone}
-Preferred Contact: ${data.preferred_contact}
-
-Vehicle Information:
-Make & Model: ${data.car_model}
-
-Problem Description:
-${data.problem}
-
-Submitted from: Adaptable Automotive Website
-Date: ${new Date().toLocaleString()}`;
-
-                // Create mailto link
-                const subject = encodeURIComponent('New Auto Repair Service Request - Adaptable Automotive');
-                const body = encodeURIComponent(emailBody);
-                const mailtoLink = `mailto:keygan.foster@gmail.com?subject=${subject}&body=${body}`;
-
-                // Disable button and show processing state
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'SENDING...';
-
-                // Open email client
-                window.location.href = mailtoLink;
-
-                // Show success message and reset form
-                setTimeout(() => {
-                    alert('Your service request has been prepared! Please check if your email client opened. If not, you can manually email us at keygan.foster@gmail.com with your request details.');
-                    this.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'REQUEST SERVICE QUOTE';
-                }, 1000);
-            });
-        }
     </script>
 </body>
 </html>
